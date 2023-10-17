@@ -1,11 +1,21 @@
+#!/bin/bash
+
+# Make bash.sh executable
+chmod +x ~/Bash-termux/bash.sh
+chmod +x ~/Bash-termux/update.sh
+
+# Define the command and directory
 command="bashinst"
+bash_dir=~/Bash-termux
 
-script_dir="/data/data/com.termux/files/home/Bash-termux"
+# Create a symbolic link to the script
+ln -s "$bash_dir/bash.sh" "/data/data/com.termux/files/usr/bin/$command"
 
-ln -s "$script_dir/bash.sh" "/data/data/com.termux/files/usr/bin/$command"
-
-echo 'export PATH=$PATH:'"$script_dir" >> ~/.bashrc
-
+# Update PATH
+echo 'export PATH=$PATH:'"$bash_dir" >> ~/.bashrc
 source ~/.bashrc
 
-echo "Installation complete. You can now use '$command' to run your script."
+# Clear the terminal
+clear
+
+echo "Run '$command' to open."
