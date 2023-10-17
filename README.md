@@ -7,6 +7,4 @@ cd Bash-termux/
 
 chmod +x install.sh
 
-chmod +x bash.sh
-
 ./install.sh
