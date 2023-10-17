@@ -24,7 +24,7 @@ elif [ "${choice}" -eq 4 ]; then
     apt update && apt upgrade
     apt install apache2
     clear
-elif [ "${$choice}" -eq 5 ]; then
+elif [ "${choice}" -eq 5 ]; then
     ~/Bash-termux/update.sh
 else
     echo -e "\e[0;31mchoose a valid number!\e[0m"
